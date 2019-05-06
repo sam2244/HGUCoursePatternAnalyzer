@@ -1,10 +1,14 @@
 package edu.handong.analysis.datamodel;
 
 public class Student {
-	static String name;
+	private String name;
+	Student student = new Student();
 
 	public Student(String name) {
-		edu.handong.analysis.datamodel.Student.name = name;
+		student.name = name;
+	}
+
+	public Student() {
 	}
 
 	public String getName() {
