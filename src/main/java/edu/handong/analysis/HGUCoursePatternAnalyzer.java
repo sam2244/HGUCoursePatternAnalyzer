@@ -4,7 +4,6 @@ import edu.handong.analysis.datamodel.Course;
 import edu.handong.analysis.datamodel.Student;
 
 public class HGUCoursePatternAnalyzer {
-	
 	private String[] lines = {	"1999-1, JC Nam, Java Programming",
 						"1999-2, JC Nam, Programming Language Theory",
 						"1999-1, JC Nam, Data Structures",
@@ -29,7 +28,6 @@ public class HGUCoursePatternAnalyzer {
 	 * @param args
 	 */
 	public void run(String[] args) {
-		
 		numOfStudents = Integer.parseInt(args[0]);
 		numOfCourses = Integer.parseInt(args[1]);
 	
@@ -57,14 +55,17 @@ public class HGUCoursePatternAnalyzer {
 	 */
 	private Student[] initiateStudentArrayFromLines(String[] lines) {
 		students = new Student[numOfStudents];
-		new student = lines.split(",");
 		
-		int i = 0;
-		for (i: lines.length()) {
-			i++;
+		int j=0;
+		for (int i=0; i<numOfStudents; i++) {
+			students[j] = new Student(lines[i].trim().split(",")[1]);
+			
+			if(studentExist(students, students[i]) == false) {
+				j++;
+			}
 		}
 		
-		return null;
+		return students;
 	}
 
 	/**
@@ -89,14 +90,17 @@ public class HGUCoursePatternAnalyzer {
 	 */
 	private Course[] initiateCourseArrayFromLines(String[] lines) {
 		courses = new Course[numOfCourses];
-		new course = lines.split(",");
 		
-		int i = 0;
-		for (i: lines.length()) {
-			i++;
+		int j=0;
+		for (int i=0; i<numOfCourses; i++) {
+			courses[j] = new Course(lines[i].trim().split(",")[2]);
+			
+			if(courseExist(courses, courses[i]) == false) {
+				j++;
+			}
 		}
 		
-		return null;
+		return courses;
 	}
 
 	/**
